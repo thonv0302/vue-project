@@ -63,20 +63,6 @@ import { ref } from 'vue';
 //   }, speed);
 // };
 const handleClickOutside = () => alert('you clicked outside ');
-
-const vClickOutside = {
-  mounted(el, binding) {
-    el.__ClickOutsodeHandler__ = (event) => {
-      if (!(el === event.target || el.contains(event.target))) {
-        binding.value(event);
-      }
-    };
-    document.body.addEventListener('click', el.__ClickOutsodeHandler__);
-  },
-  unmounted() {
-    document.body.removeEventListener('click', el.__ClickOutsodeHandler__);
-  },
-};
 </script>
 <template>
   <!-- <h1 v-if="show" v-color:normal.underline.italic="colors">Vue School</h1>
